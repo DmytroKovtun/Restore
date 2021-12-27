@@ -2,9 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import ShopHeaderContainer from '../shop-header.js';
 import { HomePage, CartPage } from '../pages';
-
 import './app.css';
-import store from '../../store.js';
 
 const App = () => {
   

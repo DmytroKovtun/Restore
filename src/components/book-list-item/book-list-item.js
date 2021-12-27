@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import './book-list-item.css';
 
 const BookListItem = ({ book, onAddetToCart}) => {
@@ -9,7 +9,7 @@ const BookListItem = ({ book, onAddetToCart}) => {
         <img src={coverImage} alt="cover" />
       </div>
       <div className="book-details">
-        <a href="#" className="book-title">{title}</a>
+        <span href="#" className="book-title">{title}</span>
         <div className="book-author">{author}</div>
         <div className="book-price">${price}</div>
         <button className="btn btn-info add-to-cart"

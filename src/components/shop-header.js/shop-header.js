@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './shop-header.css';
 import { Link } from 'react-router-dom';
-import { MapStateToProps, connect } from 'react-redux';
+import {  connect } from 'react-redux';
 
 const ShopHeader = ({ numItems, total }) => {
   return (
@@ -10,10 +10,10 @@ const ShopHeader = ({ numItems, total }) => {
       <div className="logo text-dark" href="#">ReStore</div>
       </Link>
       <Link to = '/cart'>
-      <a className="shopping-cart">
+      <span className="shopping-cart">
         <i className="cart-icon fa fa-shopping-cart" />
         {numItems} items (${total})
-      </a>
+      </span>
       </Link>
     </header>
   );
@@ -22,14 +22,14 @@ const ShopHeader = ({ numItems, total }) => {
 class ShopHeaderContainer extends  Component {
 
   numItems = (items)=>{
-    console.log(items)
-    if (items.length == undefined){
+   
+    if (items.length === undefined){
       return 0
     }
     const  arrNum = items.map(({count})=> count)
-    console.log(arrNum)
+   
     const   num = arrNum.reduce((a,b)=> a+b,0)
-    console.log(num)
+    
     return num
   }
   
